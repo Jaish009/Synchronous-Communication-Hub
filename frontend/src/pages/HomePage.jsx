@@ -20,6 +20,7 @@ import CreateChannelModal from "../components/CreateChannelModal";
 import CustomChannelPreview from "../components/CustomChannelPreview";
 import UsersList from "../components/UsersList";
 import CustomChannelHeader from "../components/CustomChannelHeader";
+import ShinyText from "../components/ShinyText";
 
 const HomePage = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
@@ -54,7 +55,9 @@ const HomePage = () => {
               <div className="team-channel-list__header gap-4">
                 <div className="brand-container">
                   <img src="/logo.png" alt="Logo" className="brand-logo" />
-                  <span className="brand-name">Slap</span>
+                  <span className="brand-name">
+                    <ShinyText text="Slap" speed={2} className="font-bold" />
+                  </span>
                 </div>
                 <div className="user-button-wrapper">
                   <UserButton />
@@ -65,7 +68,7 @@ const HomePage = () => {
                 <div className="create-channel-section">
                   <button onClick={() => setIsCreateModalOpen(true)} className="create-channel-btn">
                     <PlusIcon className="size-4" />
-                    <span>Create Channel</span>
+                    <ShinyText text="Create Channel" />
                   </button>
                 </div>
 
@@ -85,7 +88,7 @@ const HomePage = () => {
                       <div className="section-header">
                         <div className="section-title">
                           <HashIcon className="size-4" />
-                          <span>Channels</span>
+                          <ShinyText text="Channels" />
                         </div>
                       </div>
 
@@ -98,7 +101,7 @@ const HomePage = () => {
                       <div className="section-header direct-messages">
                         <div className="section-title">
                           <UsersIcon className="size-4" />
-                          <span>Direct Messages</span>
+                          <ShinyText text="Direct Messages" />
                         </div>
                       </div>
                       <UsersList activeChannel={activeChannel} />

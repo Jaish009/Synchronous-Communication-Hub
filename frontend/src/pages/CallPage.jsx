@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useUser } from "@clerk/clerk-react";
 import toast from "react-hot-toast";
 
+import ShinyText from "../components/ShinyText";
+
 import { getStreamToken } from "../lib/api";
 
 import {
@@ -67,7 +69,11 @@ const CallPage = () => {
   }, [tokenData, user, callId]);
 
   if (isConnecting || !isLoaded) {
-    return <div className="h-screen flex justify-center items-center">Connecting to call...</div>;
+    return (
+      <div className="h-screen flex justify-center items-center">
+        <ShinyText text="Connecting to call..." speed={1.5} />
+      </div>
+    );
   }
 
   return (
