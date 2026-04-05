@@ -1,5 +1,5 @@
 import { UserButton } from "@clerk/clerk-react";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useStreamChat } from "../hooks/useStreamChat";
 import PageLoader from "../components/PageLoader";
@@ -23,20 +23,17 @@ import CustomChannelHeader from "../components/CustomChannelHeader";
 
 const HomePage = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
-  const [activeChannel, setActiveChannel] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { chatClient, error, isLoading } = useStreamChat();
 
-  // set active channel from URL params
-  useEffect(() => {
-    if (chatClient) {
-      const channelId = searchParams.get("channel");
-      if (channelId) {
-        const channel = chatClient.channel("messaging", channelId);
-        setActiveChannel(channel);
-      }
+  // derive active channel from URL params instead of useEffect to adhere to React best practices
+  const activeChannel = useMemo(() => {
+    const channelId = searchParams.get("channel");
+    if (chatClient && channelId) {
+      return chatClient.channel("messaging", channelId);
     }
+    return null;
   }, [chatClient, searchParams]);
 
   // todo: handle this with a better component
