@@ -1,5 +1,6 @@
 import "../styles/auth.css";
 import { SignInButton } from "@clerk/clerk-react";
+import ShinyText from "../components/ShinyText";
 
 const AuthPage = () => {
   return (
@@ -8,10 +9,14 @@ const AuthPage = () => {
         <div className="auth-hero">
           <div className="brand-container">
             <img src="/logo.png" alt="Slap" className="brand-logo" />
-            <span className="brand-name">Slap</span>
+            <span className="brand-name">
+              <ShinyText text="Slap" speed={2} className="font-bold" />
+            </span>
           </div>
 
-          <h1 className="hero-title">Where Work Happens ✨</h1>
+          <h1 className="hero-title">
+            <ShinyText text="Where Work Happens ✨" speed={3} />
+          </h1>
 
           <p className="hero-subtitle">
             Connect with your team instantly through secure, real-time messaging. Experience
