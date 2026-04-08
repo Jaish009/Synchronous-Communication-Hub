@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, useMotionValue, useAnimationFrame, useTransform } from 'motion/react';
 import './ShinyText.css';
 
