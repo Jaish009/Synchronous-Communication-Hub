@@ -8,9 +8,9 @@ const AuthPage = () => {
       <div className="auth-left">
         <div className="auth-hero">
           <div className="brand-container">
-            <img src="/logo.png" alt="Slap" className="brand-logo" />
+            <img src="/logo.png" alt="Synchronous Communication Hub" className="brand-logo" />
             <span className="brand-name">
-              <ShinyText text="Slap" speed={2} className="font-bold" />
+              <ShinyText text="Synchronous Communication Hub" speed={2} className="font-bold" />
             </span>
           </div>
 
@@ -42,7 +42,7 @@ const AuthPage = () => {
 
           <SignInButton mode="modal">
             <button className="cta-button">
-              Get Started with Slap
+              Get Started
               <span className="button-arrow">→</span>
             </button>
           </SignInButton>

@@ -53,7 +53,7 @@ const HomePage = () => {
                 <div className="brand-container">
                   <img src="/logo.png" alt="Logo" className="brand-logo" />
                   <span className="brand-name">
-                    <ShinyText text="Slap" speed={2} className="font-bold" />
+                    <ShinyText text="Synchronous Communication Hub" speed={2} className="font-bold" />
                   </span>
                 </div>
                 <div className="user-button-wrapper">
