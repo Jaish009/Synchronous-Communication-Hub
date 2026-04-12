@@ -839,36 +839,52 @@
   color: #60a5fa !important;
 }
 
-/* Force white text on own messages - override all nested elements */
+/* Force white text on own messages - nuclear specificity */
 .chat-main .str-chat__message--me .str-chat__message-text-inner,
-.chat-main .str-chat__message--me .str-chat__message-text-inner p,
-.chat-main .str-chat__message--me .str-chat__message-text-inner span,
-.chat-main .str-chat__message--me .str-chat__message-text-inner a,
-.chat-main .str-chat__message--me .str-chat__message-text-inner div,
-.chat-main .str-chat__message--me .str-chat__message-text,
-.chat-main .str-chat__message--me .str-chat__message-text p,
-.chat-main .str-chat__message--me p,
-.chat-main .str-chat__message--me span:not(.str-chat__message-simple-status):not(.str-chat__message-sender-name) {
+.chat-main .str-chat__message--me .str-chat__message-text-inner *,
+.chat-main .str-chat__message--me .str-chat__message-bubble *,
+.chat-main .str-chat__message--me .str-chat__message-text *,
+.chat-main .str-chat__message--me > * > * > * {
   color: #ffffff !important;
 }
 
-/* Force light text on other people's messages */
-.chat-main .str-chat__message-text-inner p,
-.chat-main .str-chat__message-text-inner span,
-.chat-main .str-chat__message-text-inner div,
-.chat-main .str-chat__message-text p,
-.chat-main .str-chat__message p {
+/* Force light text on all other messages */
+.chat-main .str-chat__message .str-chat__message-text-inner,
+.chat-main .str-chat__message .str-chat__message-text-inner *,
+.chat-main .str-chat__message .str-chat__message-bubble *,
+.chat-main .str-chat__message .str-chat__message-text * {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
+/* Re-apply white specifically for own messages (must come after) */
+.chat-main .str-chat__message--me .str-chat__message-text-inner,
+.chat-main .str-chat__message--me .str-chat__message-text-inner * {
+  color: #ffffff !important;
+}
+
 /* Attachment card text fixes */
+.chat-main .str-chat__message-attachment-card,
 .chat-main .str-chat__message-attachment-card *,
+.chat-main .str-chat__message-attachment--card,
 .chat-main .str-chat__message-attachment--card * {
   color: rgba(255, 255, 255, 0.85) !important;
 }
 .chat-main .str-chat__message-attachment-card a,
-.chat-main .str-chat__message-attachment--card a {
+.chat-main .str-chat__message-attachment--card a,
+.chat-main a[href] {
   color: #60a5fa !important;
+}
+
+/* Input text fix */
+.chat-main input,
+.chat-main textarea,
+.chat-main .str-chat__textarea textarea {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.chat-main input::placeholder,
+.chat-main textarea::placeholder,
+.chat-main .str-chat__textarea textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35) !important;
 }
 
 .radio-option {
