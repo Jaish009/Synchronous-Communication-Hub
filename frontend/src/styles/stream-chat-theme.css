@@ -696,9 +696,104 @@
 
 .chat-main {
   flex: 1;
-  background: rgba(255, 255, 255, 0.98);
+  background: #0f0f14;
   border-radius: 0 2rem 2rem 0;
   overflow: hidden;
+}
+
+/* Dark theme overrides for Stream Chat components */
+.chat-main .str-chat__container {
+  background: #0f0f14;
+}
+
+.chat-main .str-chat__main-panel {
+  background: #0f0f14;
+}
+
+.chat-main .str-chat__message-list {
+  background: #0f0f14;
+}
+
+.chat-main .str-chat__list {
+  background: #0f0f14;
+}
+
+.chat-main .str-chat__message-text-inner {
+  background: #1a1a2e !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(37, 99, 235, 0.15) !important;
+}
+
+.chat-main .str-chat__message--me .str-chat__message-text-inner {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.chat-main .str-chat__message-sender-name,
+.chat-main .str-chat__message-data {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.chat-main .str-chat__date-separator-date {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.chat-main .str-chat__date-separator-line {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.chat-main .str-chat__message-input {
+  background: #111119 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.chat-main .str-chat__input-flat {
+  background: #1a1a2e !important;
+  border: 1px solid rgba(37, 99, 235, 0.2) !important;
+  border-radius: 0.75rem !important;
+}
+
+.chat-main .str-chat__input-flat textarea {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.chat-main .str-chat__input-flat textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.chat-main .str-chat__channel-header {
+  background: #111119 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.chat-main .str-chat__header-livestream-left--title {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.chat-main .str-chat__header-livestream-left--members {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.chat-main .str-chat__thread {
+  background: #111119 !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.chat-main .str-chat__empty-channel {
+  background: #0f0f14 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.chat-main .str-chat__message-timestamp {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.chat-main .str-chat__message-reactions-list {
+  background: #1a1a2e !important;
+  border: 1px solid rgba(37, 99, 235, 0.15) !important;
 }
 
 .radio-option {
