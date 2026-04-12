@@ -1,6 +1,6 @@
 import { UserButton } from "@clerk/clerk-react";
 import { useMemo, useState } from "react";
-import { useSearchParams } from "react-router";
+import { useSearchParams, Link } from "react-router";
 import { useStreamChat } from "../hooks/useStreamChat";
 import PageLoader from "../components/PageLoader";
 
@@ -51,7 +51,7 @@ const HomePage = () => {
               {/* HEADER */}
               <div className="team-channel-list__header gap-4">
                 <div className="brand-container">
-                  <img src="/logo.png" alt="Logo" className="brand-logo" />
+                  <Link to="/"><img src="/logo.png" alt="Logo" className="brand-logo" /></Link>
                   <span className="brand-name">
                     <ShinyText text="Synchronous Communication Hub" speed={2} className="font-bold" />
                   </span>
