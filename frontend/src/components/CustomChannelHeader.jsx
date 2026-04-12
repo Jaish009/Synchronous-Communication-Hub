@@ -39,13 +39,13 @@ const CustomChannelHeader = () => {
   };
 
   return (
-    <div className="h-14 border-b border-gray-200 flex items-center px-4 justify-between bg-white">
+    <div className="h-14 border-b border-[rgba(255,255,255,0.08)] flex items-center px-4 justify-between bg-[#111119]">
       <div className="flex items-center gap-3">
         <div className="flex items-center gap-2">
           {channel.data?.private ? (
-            <LockIcon className="size-4 text-[#616061]" />
+            <LockIcon className="size-4 text-[rgba(255,255,255,0.5)]" />
           ) : (
-            <HashIcon className="size-4 text-[#616061]" />
+            <HashIcon className="size-4 text-[rgba(255,255,255,0.5)]" />
           )}
 
           {isDM && otherUser?.user?.image && (
@@ -56,7 +56,7 @@ const CustomChannelHeader = () => {
             />
           )}
 
-          <span className="font-medium text-[#1D1C1D]">
+          <span className="font-medium text-[rgba(255,255,255,0.9)]">
             {isDM ? otherUser?.user?.name || otherUser?.user?.id : channel.data?.id}
           </span>
         </div>
@@ -64,15 +64,15 @@ const CustomChannelHeader = () => {
 
       <div className="flex items-center gap-3">
         <button
-          className="flex items-center gap-2 hover:bg-[#F8F8F8] py-1 px-2 rounded"
+          className="flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)] py-1 px-2 rounded"
           onClick={() => setShowMembers(true)}
         >
-          <UsersIcon className="size-5 text-[#616061]" />
-          <span className="text-sm text-[#616061]">{memberCount}</span>
+          <UsersIcon className="size-5 text-[rgba(255,255,255,0.5)]" />
+          <span className="text-sm text-[rgba(255,255,255,0.5)]">{memberCount}</span>
         </button>
 
         <button
-          className="hover:bg-[#F8F8F8] p-1 rounded"
+          className="hover:bg-[rgba(255,255,255,0.08)] p-1 rounded"
           onClick={handleVideoCall}
           title="Start Video Call"
         >
@@ -85,8 +85,8 @@ const CustomChannelHeader = () => {
           </button>
         )}
 
-        <button className="hover:bg-[#F8F8F8] p-1 rounded" onClick={handleShowPinned}>
-          <PinIcon className="size-4 text-[#616061]" />
+        <button className="hover:bg-[rgba(255,255,255,0.08)] p-1 rounded" onClick={handleShowPinned}>
+          <PinIcon className="size-4 text-[rgba(255,255,255,0.5)]" />
         </button>
       </div>
 

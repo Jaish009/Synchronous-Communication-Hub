@@ -796,6 +796,49 @@
   border: 1px solid rgba(37, 99, 235, 0.15) !important;
 }
 
+/* Catch-all dark overrides for remaining Stream Chat white elements */
+.chat-main .str-chat,
+.chat-main .str-chat__channel,
+.chat-main .str-chat__channel .str-chat__container,
+.chat-main .str-chat__main-panel,
+.chat-main .str-chat__message-list-scroll,
+.chat-main .str-chat__virtual-list,
+.chat-main .str-chat__ul,
+.chat-main .str-chat__li,
+.chat-main .str-chat__window {
+  background: #0f0f14 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.chat-main .str-chat__message-simple-status,
+.chat-main .str-chat__message-status {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.chat-main .str-chat__message-url-link {
+  color: #60a5fa !important;
+}
+
+.chat-main .str-chat__send-button {
+  color: #2563eb !important;
+}
+
+.chat-main .str-chat__message-attachment--card,
+.chat-main .str-chat__message-attachment-card {
+  background: #1a1a2e !important;
+  border: 1px solid rgba(37, 99, 235, 0.15) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.chat-main .str-chat__message-attachment-card--title,
+.chat-main .str-chat__message-attachment-card--text {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.chat-main .str-chat__message-attachment-card--url {
+  color: #60a5fa !important;
+}
+
 .radio-option {
   display: flex;
   align-items: flex-start;
