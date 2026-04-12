@@ -18,6 +18,33 @@
   --spacing-xl: 32px;
 }
 
+/* Stream Chat dark theme via CSS custom properties */
+.chat-main .str-chat {
+  --str-chat__own-message-bubble-color: #ffffff;
+  --str-chat__own-message-bubble-background-color: #2563eb;
+  --str-chat__message-bubble-color: rgba(255, 255, 255, 0.9);
+  --str-chat__message-bubble-background-color: #1a1a2e;
+
+  --str-chat__background-color: #0f0f14;
+  --str-chat__secondary-background-color: #111119;
+  --str-chat__primary-surface-color: #1a1a2e;
+  --str-chat__secondary-surface-color: #151520;
+
+  --str-chat__text-color: rgba(255, 255, 255, 0.9);
+  --str-chat__text-low-emphasis-color: rgba(255, 255, 255, 0.4);
+  --str-chat__disabled-color: rgba(255, 255, 255, 0.25);
+
+  --str-chat__surface-color: rgba(255, 255, 255, 0.08);
+  --str-chat__border-color: rgba(255, 255, 255, 0.08);
+
+  --str-chat__message-input-background-color: #1a1a2e;
+  --str-chat__message-input-color: rgba(255, 255, 255, 0.9);
+
+  --str-chat__primary-color: #2563eb;
+  --str-chat__active-primary-color: #1d4ed8;
+  --str-chat__on-primary-color: #ffffff;
+}
+
 /* Chat Wrapper & Container */
 .chat-wrapper {
   min-height: 100vh;
