@@ -30,7 +30,7 @@ const CreateChannelModal = ({ onClose }: CreateChannelModalProps) => {
 
       try {
         const response = await client.queryUsers(
-          { id: { $ne: client.user.id } },
+          { id: { $ne: client.user.id } } as any,
           { name: 1 },
           { limit: 100 }
         );

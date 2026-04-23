@@ -1,3 +1,4 @@
+/* global clients */
 /// <reference lib="webworker" />
 
 // Push notification service worker

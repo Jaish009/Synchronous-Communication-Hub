@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: [ENV.CLIENT_URL, /\.vercel\.app$/],
+    origin: [ENV.CLIENT_URL, /\.vercel\.app$/, "http://localhost:5173"],
     credentials: true,
   })
 );

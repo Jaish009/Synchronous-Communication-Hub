@@ -25,7 +25,7 @@ const InviteModal = ({ channel, onClose }: InviteModalProps) => {
 
       try {
         const members = Object.keys(channel.state.members);
-        const res = await client.queryUsers({ id: { $nin: members } }, { name: 1 }, { limit: 30 });
+        const res = await client.queryUsers({ id: { $nin: members } } as any, { name: 1 }, { limit: 30 });
         setUsers(res.users);
       } catch (error) {
         console.log("Error fetching users", error);

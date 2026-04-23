@@ -19,7 +19,7 @@ const UsersList = ({ activeChannel }: UsersListProps) => {
     if (!client?.user) return;
 
     const response = await client.queryUsers(
-      { id: { $ne: client.user.id } },
+      { id: { $ne: client.user.id } } as any,
       { name: 1 },
       { limit: 20 }
     );
@@ -54,7 +54,7 @@ const UsersList = ({ activeChannel }: UsersListProps) => {
         members: [client.user.id, targetUser.id],
       });
       await channel.watch();
-      setSearchParams({ channel: channel.id });
+      if (channel.id) setSearchParams({ channel: channel.id });
     } catch (error) {
       console.log("Error creating DM", error),
         Sentry.captureException(error, {
