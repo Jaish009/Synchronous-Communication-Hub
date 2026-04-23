@@ -40,10 +40,10 @@ export const SummaryButton = () => {
     <>
       <button
         onClick={handleSummarize}
-        className="flex items-center justify-center p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 transition-all text-gray-300 hover:text-white"
-        title="AI Summary (Catch Up)"
+        className="p-1.5 rounded-md hover:bg-white/10 transition-colors group flex items-center justify-center"
+        title="AI Summary"
       >
-        <Sparkles size={18} className="text-purple-400" />
+        <Sparkles className="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" />
       </button>
 
       <AnimatePresence>
@@ -52,7 +52,7 @@ export const SummaryButton = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0, y: 20 }}

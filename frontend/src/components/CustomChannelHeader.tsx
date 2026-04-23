@@ -1,4 +1,4 @@
-import { HashIcon, LockIcon, UsersIcon, PinIcon, VideoIcon, Edit3, Mic } from "lucide-react";
+import { HashIcon, LockIcon, UsersIcon, PinIcon, VideoIcon, Pen, Mic } from "lucide-react";
 import { useChannelStateContext } from "stream-chat-react";
 import { useState } from "react";
 import { useUser } from "@clerk/clerk-react";
@@ -78,11 +78,11 @@ const CustomChannelHeader = () => {
         <SummaryButton />
         
         <button
-          className="hover:bg-[rgba(255,255,255,0.08)] p-1.5 rounded text-[rgba(255,255,255,0.5)] hover:text-white transition-colors"
+          className="hover:bg-[rgba(255,255,255,0.08)] p-1 rounded"
           onClick={() => setShowWhiteboard(true)}
           title="Open Whiteboard"
         >
-          <Edit3 size={18} />
+          <Pen className="size-5 text-[rgba(255,255,255,0.5)] hover:text-white transition-colors" />
         </button>
 
         <button
