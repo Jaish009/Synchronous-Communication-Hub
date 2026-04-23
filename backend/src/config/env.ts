@@ -12,4 +12,5 @@ export const ENV = {
   INNGEST_EVENT_KEY: process.env.INNGEST_EVENT_KEY as string,
   INNGEST_SIGNING_KEY: process.env.INNGEST_SIGNING_KEY as string,
   CLIENT_URL: process.env.CLIENT_URL as string,
+  GEMINI_API_KEY: process.env.GEMINI_API_KEY as string,
 } as const;

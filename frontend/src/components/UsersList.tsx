@@ -56,8 +56,8 @@ const UsersList = ({ activeChannel }: UsersListProps) => {
       await channel.watch();
       if (channel.id) setSearchParams({ channel: channel.id });
     } catch (error) {
-      console.log("Error creating DM", error),
-        Sentry.captureException(error, {
+      console.log("Error creating DM", error);
+      Sentry.captureException(error, {
           tags: { component: "UsersList" },
           extra: {
             context: "create_direct_message",

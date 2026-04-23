@@ -1,10 +1,12 @@
-import { HashIcon, LockIcon, UsersIcon, PinIcon, VideoIcon } from "lucide-react";
+import { HashIcon, LockIcon, UsersIcon, PinIcon, VideoIcon, Edit3, Mic } from "lucide-react";
 import { useChannelStateContext } from "stream-chat-react";
 import { useState } from "react";
 import { useUser } from "@clerk/clerk-react";
 import MembersModal from "./MembersModal";
 import PinnedMessagesModal from "./PinnedMessagesModal";
 import InviteModal from "./InviteModal";
+import { SummaryButton } from "./SummaryButton";
+import { WhiteboardModal } from "./WhiteboardModal";
 
 const CustomChannelHeader = () => {
   const { channel } = useChannelStateContext();
@@ -15,6 +17,7 @@ const CustomChannelHeader = () => {
   const [showInvite, setShowInvite] = useState(false);
   const [showMembers, setShowMembers] = useState(false);
   const [showPinnedMessages, setShowPinnedMessages] = useState(false);
+  const [showWhiteboard, setShowWhiteboard] = useState(false);
   const [pinnedMessages, setPinnedMessages] = useState<any[]>([]);
 
   const otherUser = Object.values(channel.state.members).find(
@@ -34,6 +37,15 @@ const CustomChannelHeader = () => {
       const callUrl = `${window.location.origin}/call/${channel.id}`;
       await channel.sendMessage({
         text: `I've started a video call. Join me here: ${callUrl}`,
+      });
+    }
+  };
+
+  const handleHuddle = async () => {
+    if (channel) {
+      const callUrl = `${window.location.origin}/call/${channel.id}?mode=huddle`;
+      await channel.sendMessage({
+        text: `Started an audio huddle. Join here: ${callUrl}`,
       });
     }
   };
@@ -63,12 +75,30 @@ const CustomChannelHeader = () => {
       </div>
 
       <div className="flex items-center gap-3">
+        <SummaryButton />
+        
+        <button
+          className="hover:bg-[rgba(255,255,255,0.08)] p-1.5 rounded text-[rgba(255,255,255,0.5)] hover:text-white transition-colors"
+          onClick={() => setShowWhiteboard(true)}
+          title="Open Whiteboard"
+        >
+          <Edit3 size={18} />
+        </button>
+
         <button
           className="flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)] py-1 px-2 rounded"
           onClick={() => setShowMembers(true)}
         >
           <UsersIcon className="size-5 text-[rgba(255,255,255,0.5)]" />
           <span className="text-sm text-[rgba(255,255,255,0.5)]">{memberCount}</span>
+        </button>
+
+        <button
+          className="hover:bg-[rgba(255,255,255,0.08)] p-1 rounded"
+          onClick={handleHuddle}
+          title="Start Audio Huddle"
+        >
+          <Mic className="size-5 text-emerald-400" />
         </button>
 
         <button
@@ -105,6 +135,8 @@ const CustomChannelHeader = () => {
       )}
 
       {showInvite && <InviteModal channel={channel} onClose={() => setShowInvite(false)} />}
+      
+      {showWhiteboard && <WhiteboardModal onClose={() => setShowWhiteboard(false)} />}
     </div>
   );
 };

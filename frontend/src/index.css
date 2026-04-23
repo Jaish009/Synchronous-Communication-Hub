@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-default: #8b5cf6; /* Purple 500 */
+  --color-brand-cyber: #0ea5e9; /* Sky 500 */
+}
+
+:root {
+  --accent-color: var(--color-brand-default);
+  --accent-glow: rgba(139, 92, 246, 0.5);
+}
+
+:root[data-theme="cyber"] {
+  --accent-color: var(--color-brand-cyber);
+  --accent-glow: rgba(14, 165, 233, 0.5);
+}
+
+body {
+  background-color: #0a0a0a;
+  color: white;
+}

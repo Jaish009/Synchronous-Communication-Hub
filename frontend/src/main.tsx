@@ -13,11 +13,15 @@ import {
   matchRoutes,
 } from "react-router";
 import { Toaster } from "react-hot-toast";
+import { registerSW } from 'virtual:pwa-register';
 
 import * as Sentry from "@sentry/react";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AuthProvider from "./providers/AuthProvider";
+
+// Register Service Worker
+registerSW({ immediate: true });
 
 const queryClient = new QueryClient();
 
