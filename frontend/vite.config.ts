@@ -13,7 +13,7 @@ export default defineConfig({
       includeAssets: ["favicon.svg", "logo.png", "icons/*.png"],
       manifest: false, // using public/manifest.json
       workbox: {
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MiB
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // 10 MiB
         globPatterns: [
           "**/*.{js,css,html,ico,png,svg,woff2,webp,avif,m4a,mp4,webm,mpd,m3u8}",
         ],
@@ -44,4 +44,7 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    chunkSizeWarningLimit: 5000,
+  },
 });

@@ -23,6 +23,7 @@ import CustomChannelPreview from "../components/CustomChannelPreview";
 import UsersList from "../components/UsersList";
 import CustomChannelHeader from "../components/CustomChannelHeader";
 import ShinyText from "../components/ShinyText";
+import { SmartReplies } from "../components/SmartReplies";
 
 const HomePage = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
@@ -118,12 +119,15 @@ const HomePage = () => {
               <Window>
                 <CustomChannelHeader />
                 <MessageList />
-                <div className="flex items-center">
-                  <div className="flex-1">
-                    <MessageInput />
-                  </div>
-                  <div className="px-2">
-                    <PollButton onClick={() => setIsPollModalOpen(true)} />
+                <div className="flex flex-col">
+                  <SmartReplies />
+                  <div className="flex items-center">
+                    <div className="flex-1">
+                      <MessageInput />
+                    </div>
+                    <div className="px-2">
+                      <PollButton onClick={() => setIsPollModalOpen(true)} />
+                    </div>
                   </div>
                 </div>
               </Window>

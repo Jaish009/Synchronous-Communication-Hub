@@ -40,10 +40,14 @@ export const SummaryButton = () => {
     <>
       <button
         onClick={handleSummarize}
-        className="p-1.5 rounded-md hover:bg-white/10 transition-colors group flex items-center justify-center"
-        title="AI Summary"
+        className="p-1.5 rounded-lg hover:bg-purple-500/10 transition-all duration-300 group flex items-center gap-2 border border-transparent hover:border-purple-500/30 relative overflow-hidden"
+        title="AI Channel Summary"
       >
-        <Sparkles className="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" />
+        <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="relative flex items-center gap-1.5">
+          <Sparkles className="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]" />
+          <span className="text-[10px] font-bold text-purple-400/80 group-hover:text-purple-300 uppercase tracking-wider">AI</span>
+        </div>
       </button>
 
       <AnimatePresence>
