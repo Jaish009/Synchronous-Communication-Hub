@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Sparkles, X, Loader2 } from "lucide-react";
+import { SparklesIcon, XIcon, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useChannelStateContext } from "stream-chat-react";
 import { summarizeChannelMessages } from "../lib/api";
@@ -40,13 +40,13 @@ export const SummaryButton = () => {
     <>
       <button
         onClick={handleSummarize}
-        className="p-1.5 rounded-lg hover:bg-purple-500/10 transition-all duration-300 group flex items-center gap-2 border border-transparent hover:border-purple-500/30 relative overflow-hidden"
+        className="p-1.5 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 transition-all duration-300 group flex items-center gap-2 border border-purple-500/30 hover:border-purple-500/50 relative overflow-hidden"
         title="AI Channel Summary"
       >
         <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
         <div className="relative flex items-center gap-1.5">
-          <Sparkles className="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]" />
-          <span className="text-[10px] font-bold text-purple-400/80 group-hover:text-purple-300 uppercase tracking-wider">AI</span>
+          <SparklesIcon className="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors drop-shadow-[0_0_10px_rgba(168,85,247,0.6)]" />
+          <span className="text-[10px] font-bold text-white group-hover:text-purple-300 uppercase tracking-wider">AI SUMMARY</span>
         </div>
       </button>
 
@@ -69,7 +69,7 @@ export const SummaryButton = () => {
               <div className="flex items-center justify-between mb-6 mt-2">
                 <div className="flex items-center gap-2">
                   <div className="p-2 bg-purple-500/20 rounded-lg">
-                    <Sparkles size={20} className="text-purple-400" />
+                    <SparklesIcon size={20} className="text-purple-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-white">AI Channel Summary</h3>
                 </div>
@@ -77,7 +77,7 @@ export const SummaryButton = () => {
                   onClick={() => setIsOpen(false)}
                   className="p-1 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
                 >
-                  <X size={20} />
+                  <XIcon size={20} />
                 </button>
               </div>
 

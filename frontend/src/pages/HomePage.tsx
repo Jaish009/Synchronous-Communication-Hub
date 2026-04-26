@@ -17,7 +17,7 @@ import {
 } from "stream-chat-react";
 
 import "../styles/stream-chat-theme.css";
-import { HashIcon, PlusIcon, UsersIcon } from "lucide-react";
+import { HashIcon, PlusIcon, UsersIcon, SparklesIcon } from "lucide-react";
 import CreateChannelModal from "../components/CreateChannelModal";
 import CustomChannelPreview from "../components/CustomChannelPreview";
 import UsersList from "../components/UsersList";
@@ -115,25 +115,60 @@ const HomePage = () => {
 
           {/* RIGHT CONTAINER */}
           <div className="chat-main">
-            <Channel channel={activeChannel || undefined}>
-              <Window>
-                <CustomChannelHeader />
-                <MessageList />
-                <div className="flex flex-col">
-                  <SmartReplies />
-                  <div className="flex items-center">
-                    <div className="flex-1">
-                      <MessageInput />
-                    </div>
-                    <div className="px-2">
-                      <PollButton onClick={() => setIsPollModalOpen(true)} />
+            {activeChannel ? (
+              <Channel channel={activeChannel}>
+                <Window>
+                  <CustomChannelHeader />
+                  <MessageList />
+                  <div className="flex flex-col">
+                    <SmartReplies />
+                    <div className="flex items-center">
+                      <div className="flex-1">
+                        <MessageInput />
+                      </div>
+                      <div className="px-2">
+                        <PollButton onClick={() => setIsPollModalOpen(true)} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Window>
+                </Window>
 
-              <Thread />
-            </Channel>
+                <Thread />
+              </Channel>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full bg-[#0a0a0a] p-8 text-center">
+                <div className="relative mb-8">
+                  <div className="absolute inset-0 bg-purple-500/20 blur-[60px] rounded-full" />
+                  <div className="relative p-6 bg-purple-500/10 border border-purple-500/20 rounded-3xl backdrop-blur-xl">
+                    <SparklesIcon size={48} className="text-purple-400 drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]" />
+                  </div>
+                </div>
+                
+                <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+                  Synchronous AI Hub
+                </h2>
+                <p className="text-gray-400 max-w-md mb-8 leading-relaxed">
+                  Select a channel from the sidebar to start collaborating. Our AI assistant is ready to summarize discussions and suggest smart replies.
+                </p>
+                
+                <div className="grid grid-cols-2 gap-4 w-full max-w-lg">
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-left">
+                    <div className="flex items-center gap-2 mb-2">
+                      <SparklesIcon size={16} className="text-purple-400" />
+                      <span className="text-xs font-bold text-white uppercase tracking-wider">AI Summaries</span>
+                    </div>
+                    <p className="text-xs text-gray-500">Get instant summaries of missed conversations.</p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-left">
+                    <div className="flex items-center gap-2 mb-2">
+                      <SparklesIcon size={16} className="text-purple-400" />
+                      <span className="text-xs font-bold text-white uppercase tracking-wider">Smart Replies</span>
+                    </div>
+                    <p className="text-xs text-gray-500">Speed up your workflow with AI-generated suggestions.</p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

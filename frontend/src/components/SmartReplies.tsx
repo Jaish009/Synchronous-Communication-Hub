@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Sparkles, Loader2 } from "lucide-react";
+import { SparklesIcon, Loader2 } from "lucide-react";
 import { useChannelStateContext, useChatContext } from "stream-chat-react";
 import { getSmartReplies } from "../lib/api";
 import { motion, AnimatePresence } from "motion/react";
@@ -51,8 +51,8 @@ export const SmartReplies = () => {
   return (
     <div className="px-4 py-2 border-t border-white/5 bg-black/20 backdrop-blur-md">
       <div className="flex items-center gap-2 mb-2">
-        <Sparkles size={14} className="text-purple-400" />
-        <span className="text-[10px] font-bold text-purple-400/80 uppercase tracking-widest">AI Suggestions</span>
+        <SparklesIcon size={14} className="text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+        <span className="text-[10px] font-bold text-white uppercase tracking-widest">AI SUGGESTIONS</span>
       </div>
       
       <div className="flex flex-wrap gap-2 overflow-x-auto no-scrollbar pb-1">
