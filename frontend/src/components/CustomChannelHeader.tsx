@@ -6,7 +6,7 @@ import MembersModal from "./MembersModal";
 import PinnedMessagesModal from "./PinnedMessagesModal";
 import InviteModal from "./InviteModal";
 import { SummaryButton } from "./SummaryButton";
-import { WhiteboardModal } from "./WhiteboardModal";
+import Whiteboard from "./Whiteboard";
 
 const CustomChannelHeader = () => {
   const { channel } = useChannelStateContext();
@@ -136,7 +136,7 @@ const CustomChannelHeader = () => {
 
       {showInvite && <InviteModal channel={channel} onClose={() => setShowInvite(false)} />}
       
-      {showWhiteboard && <WhiteboardModal onClose={() => setShowWhiteboard(false)} />}
+      {showWhiteboard && <Whiteboard channel={channel} onClose={() => setShowWhiteboard(false)} />}
     </div>
   );
 };
