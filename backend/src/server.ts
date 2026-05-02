@@ -18,6 +18,7 @@ app.use(
   cors({
     origin: [ENV.CLIENT_URL, /\.vercel\.app$/, "http://localhost:5173"],
     credentials: true,
+    optionsSuccessStatus: 200,
   })
 );
 app.use(clerkMiddleware()); // req.auth will be available in the request object
