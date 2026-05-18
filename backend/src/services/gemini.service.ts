@@ -10,7 +10,7 @@ export const summarizeMessages = async (messages: any[]) => {
   }
 
   // Use the recommended model for text tasks
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   const formattedMessages = messages
     .map((msg) => `${msg.user?.name || msg.user?.id}: ${msg.text}`)
@@ -41,7 +41,7 @@ export const generateSmartReplies = async (messages: any[]) => {
     return []; // Return empty array if not configured to fail gracefully
   }
 
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   // Only take the last 5 messages for context to keep it fast and relevant
   const recentMessages = messages.slice(-5);
