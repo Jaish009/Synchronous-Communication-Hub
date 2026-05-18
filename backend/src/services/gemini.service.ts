@@ -30,9 +30,9 @@ export const summarizeMessages = async (messages: any[]) => {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     return response.text();
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error generating summary:", error);
-    throw new Error("Failed to generate summary.");
+    throw new Error(error?.message || "Failed to generate summary.");
   }
 };
 
@@ -66,8 +66,8 @@ export const generateSmartReplies = async (messages: any[]) => {
     // Parse the JSON array. Handle potential markdown wrappers if the model includes them despite instructions.
     const cleanText = text.replace(/```json\n?|\n?```/g, "");
     return JSON.parse(cleanText);
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error generating smart replies:", error);
-    return []; // Fail gracefully
+    throw new Error(error?.message || "Failed to generate smart replies.");
   }
 };
