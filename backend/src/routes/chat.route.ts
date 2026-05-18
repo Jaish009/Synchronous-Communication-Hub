@@ -1,5 +1,6 @@
 import express from "express";
 import { getStreamToken, summarizeChannel, getSmartReplies } from "../controllers/chat.controller.js";
+import { summarizeMessages } from "../services/gemini.service.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
 import { tokenRateLimiter } from "../middleware/rateLimit.js";
 
@@ -9,7 +10,6 @@ router.get("/token", tokenRateLimiter, protectRoute, getStreamToken);
 router.post("/summarize", protectRoute, summarizeChannel);
 router.post("/smart-replies", protectRoute, getSmartReplies);
 
-import { summarizeMessages } from "../services/gemini.service.js";
 router.get("/debug-gemini", async (req, res) => {
   try {
     const result = await summarizeMessages([{ text: "hello", user: { name: "test" } }]);
